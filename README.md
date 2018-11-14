@@ -1,3 +1,3 @@
 # framework7
-node app.js
-npm run dev
+# node app.js
+# npm run dev

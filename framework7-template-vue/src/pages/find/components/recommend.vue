@@ -2,7 +2,7 @@
   <div class="personalRecommend">
     <f7-swiper ref="swiper" pagination :init="true" :params="params">
       <f7-swiper-slide v-for="(swiper,i) in carousels" :key="i">
-        <img :src="swiper.picUrl" alt="">
+        <img :src="swiper.imageUrl" alt="">
       </f7-swiper-slide>
     </f7-swiper>
     <div class="entry">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="recommends">
+    <!-- <div class="recommends">
       <h3>最新音乐</h3>
       <div class="outerWrapper">
         <div class="innerWrapper" v-for="(song,i) in newSongs" :key="i">
@@ -34,7 +34,7 @@
           <div class="name">{{song.song.album.name}}</div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="recommends">
       <h3>主播电台</h3>
       <div class="outerWrapper">
@@ -77,22 +77,18 @@ export default {
     };
   },
   created() {
-    // this.$nextTick(() => {
+    this.$nextTick(() => {
       this.$axios.all([
         this.getBanner(),
         this.getPersonalized(),
-        this.getPersonalNewsong(),
+        // this.getPersonalNewsong(),
         this.getPersonalizedDjprogram()
       ]);
-      // this.getBanner();
-      // this.fetchPersonalized();
-      // this.fetchPersonalNewsong();
-      // this.fetchPersonalizedDjprogram();
-    // });
+    });
   },
   methods: {
     getBanner() {
-      console.log(111)
+      console.log(111);
       fetchBanner({ params: { type: 1 } }).then(res => {
         this.carousels = res.banners;
       });

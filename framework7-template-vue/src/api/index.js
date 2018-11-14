@@ -12,7 +12,7 @@ export default (config => {
 })({
     //api
     fetchBanner: "/banner",//获取轮播 type: 1: mv 4: 电台 5: 视频
-    fetchPersonalNewsong: "/personalized/newsong",//推荐歌单（需要登陆）
+    fetchPersonalNewsong: "/personalized/newsong",//推荐歌单
     fetchRecommendResource: "/recommend/resource",//获取每日推荐歌单
     fetchPersonalized: "/personalized",//推荐歌单
     fetchPersonalizedDjprogram: "/personalized/djprogram"//推荐主播电台

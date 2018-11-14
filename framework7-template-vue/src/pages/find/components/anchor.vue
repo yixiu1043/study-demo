@@ -2,7 +2,7 @@
   <div class="personalRecommend">
     <f7-swiper ref="swiper" pagination :init="true" :params="params">
       <f7-swiper-slide v-for="(swiper,i) in carousels" :key="i">
-        <img :src="swiper.picUrl" alt="">
+        <img :src="swiper.imageUrl" alt="">
       </f7-swiper-slide>
     </f7-swiper>
     <div class="entry">

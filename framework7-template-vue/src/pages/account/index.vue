@@ -23,7 +23,7 @@
         <div class="logo"><img src="/static/imgs/logo.png" alt=""></div>
       </f7-block>
       <f7-block>
-        <f7-button color="red" href="/login/" big round>手机号登陆</f7-button>
+        <f7-button color="red" panel-open="right" big round>手机号登陆</f7-button>
         <div class="gap"></div>
         <f7-button color="red" big round>注册</f7-button>
       </f7-block>
@@ -35,7 +35,6 @@
 </template>
 <script>
 import thirdEntry from "./components/thirdEntry";
-import axios from "axios";
 export default {
   components: {
     thirdEntry
@@ -57,10 +56,7 @@ export default {
     };
   },
   created() {
-    axios.get("/program/recommend").then(res => {
-      console.log(">>>>>>>>>>>>>>>>>>")
-      console.log(1111111111111)
-    });
+
   }
 };
 </script>

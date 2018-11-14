@@ -35,9 +35,9 @@
   "dependencies": {
     "@mdi/font": "^2.8.94",
     "axios": "^0.17.1",
-    "framework7": "^3.4.0",
+    "framework7": "^3.5.2",
     "framework7-icons": "^0.9.1",
-    "framework7-vue": "^3.4.0",
+    "framework7-vue": "^3.5.2",
     "material-design-icons": "^3.0.1",
     "vue": "^2.5.17"
   },
