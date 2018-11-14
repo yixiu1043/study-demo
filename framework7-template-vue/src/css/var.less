@@ -1,0 +1,35 @@
+@theme: #d43c33;
+@white: #fff;
+@black: #000;
+@paddingTop: 43px;
+@paddingBottom: 70px;
+@flexRow: {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row
+};
+
+@flexColumn: {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column
+};
+@wordWrap: {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;//要显示几行就把-webkit-line-clamp:1;后面的值改成几就行，此处需要注意的是高度和宽度是必须的值。
+    -webkit-box-orient: vertical;
+};
+.after(@w,@h,@c,@l,@t){
+    position: absolute;
+    display: block;
+    content: "";
+    width: @w;
+    height: @h;
+    background-color: @c;
+    left: @l;
+    top: @t;
+};

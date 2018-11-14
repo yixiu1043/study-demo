@@ -1,2 +1,3 @@
 # framework7
-demo
+node app.js
+npm run dev

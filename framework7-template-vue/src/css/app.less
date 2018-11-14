@@ -1,0 +1,20 @@
+/* Your app styles here */
+
+@import "./var.less";
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: @white;
+    /* placeholder字体大小  */
+    font-size: 14px;
+    /* placeholder位置  */
+    text-align: left;
+}
+
+// 全局
+.navbar {
+    background-color: @theme;
+    color: #fff;
+    &:after {
+        background-color: transparent;
+    }
+}
