@@ -8,7 +8,7 @@
             <f7-link tab-link="#account" text="账号" icon-ios="f7:person_fill" icon-md="material:file_upload"></f7-link>
         </f7-toolbar>
 
-        <f7-view id="find" main tab tab-active url="/"></f7-view>
+        <f7-view id="find" tab tab-active url="/"></f7-view>
         <f7-view id="video" tab url="/video/"></f7-view>
         <f7-view id="mine" tab url="/mine/"></f7-view>
         <f7-view id="freind" tab url="/freind/"></f7-view>

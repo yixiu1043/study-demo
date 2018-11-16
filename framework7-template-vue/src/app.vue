@@ -24,6 +24,11 @@ export default {
         routes: routes
       }
     };
+  },
+  methods: {
+    goBack() {
+      this.$f7router.back();
+    }
   }
 };
 </script>

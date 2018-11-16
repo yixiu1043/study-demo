@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="account">
+  <f7-page>
     <header>账号</header>
     <div class="top">
       <div class="tip">登陆网易云音乐</div>
@@ -23,7 +23,7 @@
         <div class="logo"><img src="/static/imgs/logo.png" alt=""></div>
       </f7-block>
       <f7-block>
-        <f7-button color="red" panel-open="right" href="/login/" @click="loginEntry = false" big round>手机号登陆</f7-button>
+        <f7-button color="red" panel-open="right" @click="goLoginPage" big round>手机号登陆</f7-button>
         <div class="gap"></div>
         <f7-button color="red" big round>注册</f7-button>
       </f7-block>
@@ -57,8 +57,9 @@ export default {
   },
   created() {},
   methods: {
-    handClick(){
-      alert(1111111)
+    goLoginPage() {
+      this.loginEntry = false;
+      this.$f7router.navigate("/login/");
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="find">
+  <f7-page>
     <f7-navbar :sliding="false">
       <f7-nav-left>
         <f7-icon f7="mic" class="mic"></f7-icon>
