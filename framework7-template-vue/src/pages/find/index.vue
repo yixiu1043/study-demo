@@ -20,11 +20,12 @@ import recommend from "./components/recommend";
 import anchor from "./components/anchor";
 export default {
   components: {
-    recommend,anchor
+    recommend,
+    anchor
   },
   data() {
     return {
-      conponent:"recommend"
+      conponent: "recommend"
     };
   }
 };

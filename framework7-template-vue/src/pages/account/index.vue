@@ -12,7 +12,7 @@
       </f7-list-item>
     </f7-list>
     <!-- Popup -->
-    <f7-popup :opened="loginEntry" @popup:closed="popupOpened = false">
+    <f7-popup :opened="loginEntry" @popup:closed="loginEntry = false">
       <div class="header">
         <span @click="loginEntry=false" class="icon">
           <f7-icon f7="close" size="25"></f7-icon>
@@ -23,7 +23,7 @@
         <div class="logo"><img src="/static/imgs/logo.png" alt=""></div>
       </f7-block>
       <f7-block>
-        <f7-button color="red" panel-open="right" big round>手机号登陆</f7-button>
+        <f7-button color="red" panel-open="right" href="/login/" @click="loginEntry = false" big round>手机号登陆</f7-button>
         <div class="gap"></div>
         <f7-button color="red" big round>注册</f7-button>
       </f7-block>
@@ -55,8 +55,11 @@ export default {
       ]
     };
   },
-  created() {
-
+  created() {},
+  methods: {
+    handClick(){
+      alert(1111111)
+    }
   }
 };
 </script>

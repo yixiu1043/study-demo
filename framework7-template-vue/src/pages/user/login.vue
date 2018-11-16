@@ -1,5 +1,5 @@
 <template>
-  <f7-page no-toolbar no-navbar no-swipeback login-screen>
+  <f7-page name="login" no-toolbar no-navbar no-swipeback login-screen>
     <f7-login-screen-title>Framework7</f7-login-screen-title>
     <f7-list>
       <f7-list-input
