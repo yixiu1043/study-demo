@@ -33,7 +33,6 @@
   },
   "homepage": "http://framework7.io/vue/",
   "dependencies": {
-    "@mdi/font": "^2.8.94",
     "axios": "^0.17.1",
     "framework7": "^3.5.2",
     "framework7-icons": "^0.9.1",

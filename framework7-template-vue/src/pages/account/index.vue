@@ -1,10 +1,11 @@
 <template>
   <f7-page>
-    <header>账号</header>
+    <f7-navbar title="账号"></f7-navbar>
+    <!-- <header>账号</header> -->
     <div class="top">
       <div class="tip">登陆网易云音乐</div>
       <div class="tip">手机电脑多端同步，320k高音质无限下载</div>
-      <f7-button color="gray" round big @click="loginEntry=true">登陆</f7-button>
+      <f7-button color="gray" round big @click="loginEntry=true">立即登陆</f7-button>
     </div>
     <f7-list>
       <f7-list-item v-for="(item,i) in list" :key="i" :title="item.title" :link="item.link" :after="item.after">
@@ -67,14 +68,15 @@ export default {
 <style lang="less" scoped>
 @import "../../css/app.less";
 @bg: #fff;
-header {
-  height: 44px;
-  line-height: 44px;
-  background-color: @theme;
-  color: #fff;
-  text-align: center;
-  font-size: 16px;
-}
+// header {
+//   height: 44px;
+//   line-height: 44px;
+//   background-color: @theme;
+//   color: #fff;
+//   text-align: center;
+//   font-size: 16px;
+//   position: fixed;
+// }
 .top {
   background-color: @bg;
   height: 108px;

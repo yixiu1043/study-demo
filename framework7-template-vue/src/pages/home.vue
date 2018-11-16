@@ -13,6 +13,7 @@
         <f7-view id="mine" tab url="/mine/"></f7-view>
         <f7-view id="freind" tab url="/freind/"></f7-view>
         <f7-view id="account" tab url="/account/"></f7-view>
+        <f7-view name="login" tab url="/login/"></f7-view>
     </f7-views>
 </template>
 
