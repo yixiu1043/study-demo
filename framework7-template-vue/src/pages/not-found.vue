@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="Not found" back-link="Back"></f7-navbar>
+    <f7-navbar title="Not found" back-link @back-click="goback"></f7-navbar>
     <f7-block strong>
       <p>Sorry</p>
       <p>Requested content not found.</p>
@@ -8,5 +8,12 @@
   </f7-page>
 </template>
 <script>
-  export default {};
+export default {
+  methods: {
+    goback() {
+      // this.$f7router.back();
+      this.$f7router.navigate("/");
+    }
+  }
+};
 </script>

@@ -24,9 +24,9 @@
         <div class="logo"><img src="/static/imgs/logo.png" alt=""></div>
       </f7-block>
       <f7-block>
-        <f7-button color="red" panel-open="right" @click="goLoginPage" big round>手机号登陆</f7-button>
+        <f7-button color="red" panel-open="right" @click="goLoginPage('login')" big round>手机号登陆</f7-button>
         <div class="gap"></div>
-        <f7-button color="red" big round>注册</f7-button>
+        <f7-button color="red" big round @click="goLoginPage('register')">注册</f7-button>
       </f7-block>
       <f7-block>
         <thirdEntry></thirdEntry>
@@ -58,9 +58,16 @@ export default {
   },
   created() {},
   methods: {
-    goLoginPage() {
+    goLoginPage(type) {
       this.loginEntry = false;
-      this.$f7router.navigate("/login/");
+      this.$f7router.navigate("/main/login/", 
+      // this.$f7router.navigate("/login/", 
+      // {
+      //   props: {
+      //     type
+      //   }
+      // }
+      );
     }
   }
 };

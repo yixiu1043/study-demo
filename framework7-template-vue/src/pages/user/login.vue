@@ -41,8 +41,7 @@ export default {
   mounted() {
     console.log(this.$root);
     console.log(">>>>>>>>>>>");
-    console.log(this.$f7);
-    console.log(this.$f7.views);
+    console.log(this.$f7router);
   },
   methods: {
     goback() {
@@ -50,10 +49,10 @@ export default {
     },
     signIn() {
       let params = {
-        phone:this.phone,
-        password:this.password
+        phone: this.phone,
+        password: this.password
       }
-      loginByPhone(JSON.stringify(params)).then(res=>{
+      loginByPhone(params).then(res=>{
         this.$f7.dialog.alert(
           "登录成功！",
           () => {

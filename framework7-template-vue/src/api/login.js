@@ -3,7 +3,7 @@ import request from '@/utils/request'
 export function loginByPhone(query) {
   return request({
     url: '/login/cellphone',
-    method: 'get',
+    method: 'post',
     params: {
       query
     }

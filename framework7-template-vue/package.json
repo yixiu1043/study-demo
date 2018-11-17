@@ -36,6 +36,7 @@
   "homepage": "http://framework7.io/vue/",
   "dependencies": {
     "axios": "^0.17.1",
+    "crypto-md5": "^1.0.0",
     "framework7": "^3.5.2",
     "framework7-icons": "^0.9.1",
     "framework7-vue": "^3.5.2",
