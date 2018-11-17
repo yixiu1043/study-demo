@@ -9,7 +9,9 @@
     "prod": "webpack-dev-server --config ./build/webpack.config.prod.js",
     "start": "npm run dev",
     "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/fonts",
-    "postinstall": "npm run copy-fonts"
+    "postinstall": "npm run copy-fonts",
+    "lint": "eslint --ext .js,.vue src",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -37,8 +39,11 @@
     "framework7": "^3.5.2",
     "framework7-icons": "^0.9.1",
     "framework7-vue": "^3.5.2",
+    "js-cookie": "^2.2.0",
     "material-design-icons": "^3.0.1",
-    "vue": "^2.5.17"
+    "normalize.css": "^8.0.1",
+    "vue": "^2.5.17",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -47,6 +52,7 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^9.1.5",
+    "babel-eslint": "^10.0.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-vue-jsx": "^4.0.1",
@@ -54,6 +60,10 @@
     "copy-webpack-plugin": "^4.5.2",
     "cpy-cli": "^2.0.0",
     "css-loader": "^1.0.0",
+    "eslint": "4.19.1",
+    "eslint-friendly-formatter": "4.0.1",
+    "eslint-loader": "2.0.0",
+    "eslint-plugin-vue": "4.7.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",

@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import { fetchBanner } from "@/service";
+import { fetchBanner } from "@/api/list";
 export default {
   data() {
     return {
@@ -34,20 +34,20 @@ export default {
         { name: "电台排行", icon: "view_list", link: "" },
         { name: "付费精品", icon: "radio", link: "" },
         { name: "小冰电台", icon: "trending_up", link: "" }
-      ],
+      ]
     };
   },
   created() {
     this.$nextTick(() => {
-      this.fetchBanner();
+      this.getBanner();
     });
   },
   methods: {
-    fetchBanner() {
-      fetchBanner({ params: { type: 4 } }).then(res => {
+    getBanner() {
+      fetchBanner({ type: 4 }).then(res => {
         this.carousels = res.banners;
       });
-    },
+    }
   }
 };
 </script>

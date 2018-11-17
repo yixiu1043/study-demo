@@ -1,6 +1,7 @@
 // Import Vue
 import Vue from 'vue';
 
+import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 // Import F7
 import Framework7 from 'framework7/framework7.esm.bundle.js';
 
@@ -16,9 +17,7 @@ import 'framework7-icons';
 import "material-design-icons/iconfont/material-icons.css"
 // Import App Component
 import App from './app.vue';
-
-import axios from "./http";
-Vue.prototype.$axios = axios;
+import store from './vuex'
 
 import vueFilters from "@/utils/vueFilters";
 for (let key in vueFilters) {
@@ -33,9 +32,14 @@ Framework7.use(Framework7Vue)
 new Vue({
   el: '#app',
   template: '<app/>',
-
+  store,
   // Register App Component
   components: {
     app: App
+  },
+  methods: {
+    goback(){
+      this.$f7router.back();
+    }
   }
 });

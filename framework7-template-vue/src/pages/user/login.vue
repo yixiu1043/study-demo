@@ -6,8 +6,8 @@
       clear-button 
       type="text" 
       placeholder="手机号" 
-      :value="username" 
-      @input="username = $event.target.value">
+      :value="phone" 
+      @input="phone = $event.target.value">
         <f7-icon material="phone_iphone" slot="media"></f7-icon>
       </f7-list-input>
       <f7-list-input 
@@ -29,11 +29,12 @@
 </template>
 
 <script>
+import { loginByPhone } from "@/api/login"
 export default {
   data() {
     return {
       title: "手机号登录",
-      username: "",
+      phone: "",
       password: ""
     };
   },
@@ -48,15 +49,20 @@ export default {
       this.$f7router.navigate("/account/");
     },
     signIn() {
-      const self = this;
-      const app = self.$f7;
-      const router = self.$f7router;
-      app.dialog.alert(
-        `Username: ${self.username}<br>Password: ${self.password}`,
-        () => {
-          router.back();
-        }
-      );
+      let params = {
+        phone:this.phone,
+        password:this.password
+      }
+      loginByPhone(JSON.stringify(params)).then(res=>{
+        this.$f7.dialog.alert(
+          "登录成功！",
+          () => {
+            // router.back();
+            // this.$f7router.back();
+            this.$root.goback();
+          }
+        );
+      })
     }
   }
 };

@@ -52,7 +52,8 @@ import {
   fetchPersonalized,
   fetchPersonalNewsong,
   fetchPersonalizedDjprogram
-} from "@/service";
+} from "@/api/list";
+
 export default {
   data() {
     return {
@@ -66,10 +67,26 @@ export default {
       },
       carousels: [],
       entries: [
-        { name: "私人FM", icon: "radio", link: "" },
-        { name: "每日推荐", icon: "date_range", link: "" },
-        { name: "歌单", icon: "queue_music", link: "" },
-        { name: "排行榜", icon: "trending_up", link: "" }
+        {
+          name: "私人FM",
+          icon: "radio",
+          link: ""
+        },
+        {
+          name: "每日推荐",
+          icon: "date_range",
+          link: ""
+        },
+        {
+          name: "歌单",
+          icon: "queue_music",
+          link: ""
+        },
+        {
+          name: "排行榜",
+          icon: "trending_up",
+          link: ""
+        }
       ],
       recommends: [],
       newSongs: [],
@@ -78,23 +95,24 @@ export default {
   },
   created() {
     this.$nextTick(() => {
-      this.$axios.all([
-        this.getBanner(),
-        this.getPersonalized(),
-        // this.getPersonalNewsong(),
-        this.getPersonalizedDjprogram()
-      ]);
+      this.getBanner();
+      this.getPersonalized();
+      // this.getPersonalNewsong()
+      this.getPersonalizedDjprogram();
     });
   },
   methods: {
     getBanner() {
-      console.log(111);
-      fetchBanner({ params: { type: 1 } }).then(res => {
+      fetchBanner({
+        type: 1
+      }).then(res => {
         this.carousels = res.banners;
       });
     },
     getPersonalized() {
-      fetchPersonalized({ params: { limit: 6 } }).then(res => {
+      fetchPersonalized({
+        limit: 6
+      }).then(res => {
         this.recommends = res.result;
       });
     },
@@ -104,7 +122,9 @@ export default {
       });
     },
     getPersonalizedDjprogram() {
-      fetchPersonalizedDjprogram({ params: { limit: 6 } }).then(res => {
+      fetchPersonalizedDjprogram({
+        limit: 6
+      }).then(res => {
         this.Djprograms = res.result;
       });
     }
@@ -113,6 +133,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @import "../../../css/var.less";
+
 .personalRecommend {
   .swiper-slide {
     img {
@@ -120,12 +141,15 @@ export default {
       height: auto;
     }
   }
+
   .entry {
     @flexRow();
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+
     .entryInner {
       @flexColumn();
+
       .circle {
         @flexRow();
         background-color: @theme;
@@ -134,35 +158,42 @@ export default {
         width: 45px;
         color: #fff;
       }
+
       .name {
         font-size: 12px;
         margin-top: 5px;
       }
     }
   }
+
   .recommends {
     .outerWrapper {
       @flexRow();
       flex-wrap: wrap;
+
       .innerWrapper {
         width: 100px;
         position: relative;
         @flexColumn();
+
         .playCount {
           position: absolute;
           top: 0;
           right: 0;
           color: #fff;
           font-size: 14px;
+
           i {
             font-size: 15px;
           }
         }
+
         img {
           width: 100%;
           height: auto;
           border-radius: 3px;
         }
+
         .name {
           width: 100%;
           height: 35px;
@@ -174,4 +205,3 @@ export default {
   }
 }
 </style>
-
